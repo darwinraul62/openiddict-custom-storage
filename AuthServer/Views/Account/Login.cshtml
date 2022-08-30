@@ -1,0 +1,12 @@
+@model AuthServer.ViewModels.LoginViewModel
+
+<form autocomplete="off" asp-route="Login" method="post">
+    <input type="hidden" asp-for="ReturnUrl"/>
+    <div class="card">
+        <input type="text" class="form-control" placeholder="User" asp-for="LogonName" autofocus>
+        <input type="password" class="form-control form-control-last" placeholder="Password" asp-for="Password">
+    </div>
+    <p>
+        <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
+    </p>
+</form>

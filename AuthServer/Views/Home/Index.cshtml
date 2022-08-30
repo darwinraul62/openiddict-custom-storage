@@ -1,0 +1,20 @@
+@using Microsoft.AspNetCore.Authentication
+
+@if (User.Identity.IsAuthenticated)
+{
+    var authenticationResult = await Context.AuthenticateAsync();
+    <div>
+        <p>You are signed in as</p>
+        <h2>@User.Identity.Name</h2>        
+        <hr/>
+        <p><a class="btn btn-primary" asp-controller="Account" asp-action="Logout">Sign out</a></p>
+    </div>
+}
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <div>
+        <p>Hello, click button below for Sign in</p>
+        <p><a class="btn btn-sm btn-primary" asp-controller="Account" asp-action="Login">Sign in</a></p>
+    </div>
+}
